@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="../../assets/css/B9 Form.css">
+</head>
+
+<body>
+    <form action="#" method="post">
+        <h2>FORM ĐĂNG KÝ</h2>
+
+        <label class="tittle" for="ho">Họ</label>
+        <input type="text" id="ho" name="ho" placeholder="Nhập họ">
+        <span class="error-message" id="ho-error"></span>
+
+        <label class="tittle" for="ten">Tên</label>
+        <input type="text" id="ten" name="ten" placeholder="Nhập tên">
+        <span class="error-message" id="ten-error"></span>
+
+        <label class="tittle" for="ngaysinh">Ngày sinh</label>
+        <div class="date-group">
+            <select id="ngay" name="ngay">
+                <option value="" disabled selected>Ngày</option>
+            </select>
+
+            <select id="thang" name="thang">
+                <option value="" disabled selected>Tháng</option>
+                <option value="1">Tháng 1</option>
+                <option value="2">Tháng 2</option>
+                <option value="3">Tháng 3</option>
+                <option value="4">Tháng 4</option>
+                <option value="5">Tháng 5</option>
+                <option value="6">Tháng 6</option>
+                <option value="7">Tháng 7</option>
+                <option value="8">Tháng 8</option>
+                <option value="9">Tháng 9</option>
+                <option value="10">Tháng 10</option>
+                <option value="11">Tháng 11</option>
+                <option value="12">Tháng 12</option>
+            </select>
+
+            <select id="nam" name="nam">
+                <option value="" disabled selected>Năm</option>
+            </select>
+        </div>
+        <span class="error-message" id="ngaysinh-error"></span>
+
+        <label class="tittle">Giới tính</label>
+        <div class="gender-group">
+            <input type="radio" id="male" name="gioitinh" value="Nam">
+            <label for="male">Nam</label>
+            <input type="radio" id="female" name="gioitinh" value="Nữ">
+            <label for="female">Nữ</label>
+        </div>
+        <span class="error-message" id="gioitinh-error"></span>
+
+        <label class="tittle" for="sodienthoai">Số điện thoại</label>
+        <input type="text" id="sodienthoai" name="sodienthoai" placeholder="Nhập số điện thoại">
+        <span class="error-message" id="sodienthoai-error"></span>
+
+        <label class="tittle">Sở thích</label>
+        <div class="checkbox-group">
+            <div class="fav">
+                <input type="checkbox" id="docsach" name="sothich" value="Doc sach">
+                <label for="docsach">Đọc sách</label>
+            </div>
+            <div class="fav">
+                <input type="checkbox" id="xemphim" name="sothich" value="Xem phim">
+                <label for="xemphim">Xem phim</label>
+            </div>
+            <div class="fav">
+                <input type="checkbox" id="nghenhac" name="sothich" value="Nghe nhac">
+                <label for="nghenhac">Nghe nhạc</label>
+            </div>
+            <div class="fav">
+                <input type="checkbox" id="dabong" name="sothich" value="Da bong">
+                <label for="dabong">Đá bóng</label>
+            </div>
+        </div>
+
+        <label class="tittle" for="khac">Khác</label>
+        <textarea id="khac" name="khac" rows="3" placeholder="Nhập sở thích khác..."></textarea>
+
+        <div class="send">
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </div>
+    </form>
+    <script src="../../assets/js/B9 Form.js"></script>
+
+</body>
+
+</html>
