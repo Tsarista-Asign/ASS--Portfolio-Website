@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Máy tính 4 phép toán</title>
+    <link rel="stylesheet" href="B9 CALC.css">
+</head>
+
+<body>
+    <h2 id="head" class="blue" onclick="colors()">CALCULATOR</h2>
+    <div class="calculator">
+        <div class="calc-row">
+            <label for="addNum1">Cộng</label>
+            <input type="number" id="addNum1">
+            <span>+</span>
+            <input type="number" id="addNum2">
+            <button onclick="performCalculation('+', 'addNum1', 'addNum2', 'addResult')">=</button>
+            <input type="text" id="addResult" disabled>
+        </div>
+
+        <div class="calc-row">
+            <label for="subNum1">Trừ</label>
+            <input type="number" id="subNum1">
+            <span>-</span>
+            <input type="number" id="subNum2">
+            <button onclick="performCalculation('-', 'subNum1', 'subNum2', 'subResult')">=</button>
+            <input type="text" id="subResult" disabled>
+        </div>
+
+        <div class="calc-row">
+            <label for="mulNum1">Nhân</label>
+            <input type="number" id="mulNum1">
+            <span>*</span>
+            <input type="number" id="mulNum2">
+            <button onclick="performCalculation('*', 'mulNum1', 'mulNum2', 'mulResult')">=</button>
+            <input type="text" id="mulResult" disabled>
+        </div>
+
+        <div class="calc-row">
+            <label for="divNum1">Chia</label>
+            <input type="number" id="divNum1">
+            <span>/</span>
+            <input type="number" id="divNum2">
+            <button onclick="performCalculation('/', 'divNum1', 'divNum2', 'divResult')">=</button>
+            <input type="text" id="divResult" disabled>
+        </div>
+    </div>
+    <div class="result">
+        <div id="result1">
+            <div class="tittle">Cộng</div>
+            <div id="resultadd"></div>
+        </div>
+        <div id="result2">
+            <div class="tittle">Trừ</div>
+
+            <div id="resultsub"></div>
+        </div>
+        <div id="result3">
+            <div class="tittle">Nhân</div>
+            <div id="resultmul"></div>
+        </div>
+        <div id="result4">
+            <div class="tittle">Chia</div>
+            <div id="resultdiv"></div>
+        </div>
+    </div>
+    <script src="B9 CALC.js"></script>
+</body>
+
+</html>

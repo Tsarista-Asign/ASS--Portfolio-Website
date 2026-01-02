@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Min - Max</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        input {
+            width: 300px;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .buttons {
+            margin: 20px 0;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        p#result {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Tìm số lớn nhất và nhỏ nhất</h1>
+        <label for="numbers">Nhập vào dãy số, cách nhau bởi dấu cách:</label>
+        <input type="text" id="numbers" placeholder="Ví dụ: 3 5 -2 10 7" onkeydown="validateKey(event)"
+            oninput="validateNumbers()">
+        <div class="buttons">
+            <button id="maxBtn" onclick="findMax()" disabled>Tìm số lớn nhất</button>
+            <button id="minBtn" onclick="findMin()" disabled>Tìm số nhỏ nhất</button>
+        </div>
+        <p id="result"></p>
+    </div>
+    <script>
+        function findMax() {
+            const numbersInput = document.getElementById('numbers').value;
+            const validNumbers = validateInput(numbersInput);
+
+            if (validNumbers.length > 0) {
+                const maxNumber = Math.max(...validNumbers);
+                document.getElementById('result').textContent = `Số lớn nhất là: ${maxNumber}`;
+            }
+        }
+
+        function findMin() {
+            const numbersInput = document.getElementById('numbers').value;
+            const validNumbers = validateInput(numbersInput);
+
+            if (validNumbers.length > 0) {
+                const minNumber = Math.min(...validNumbers);
+                document.getElementById('result').textContent = `Số nhỏ nhất là: ${minNumber}`;
+            }
+        }
+
+        function validateInput(input) {
+            const numbers = input.trim().split(/\s+/).filter(item => {
+                return /^-?\d+(\.\d+)?$/.test(item);  // Chỉ giữ lại các giá trị số hợp lệ
+            }).map(Number);
+
+            return numbers;
+        }
+
+        function validateNumbers() {
+            const numbersInput = document.getElementById('numbers').value;
+            const validNumbers = validateInput(numbersInput);
+
+            const maxBtn = document.getElementById('maxBtn');
+            const minBtn = document.getElementById('minBtn');
+
+            if (validNumbers.length > 0) {
+                maxBtn.disabled = false;
+                minBtn.disabled = false;
+            } else {
+                maxBtn.disabled = true;
+                minBtn.disabled = true;
+            }
+        }
+
+        function validateKey(event) {
+            const key = event.key;
+            const keyCode = event.code;
+
+            // Các phím được cho phép: số, dấu cách, dấu trừ và các phím điều khiển
+            const allowedKeys = [
+                'Backspace', 'Tab', 'ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', 'Delete', // Phím điều khiển
+                ' ', // Dấu cách
+                'Minus', 'NumpadSubtract', // Dấu trừ
+            ];
+
+            // Cho phép các phím số từ cả bàn phím chính và bàn phím số
+            if ((keyCode.includes('Digit') || keyCode.includes('Numpad')) ||
+                allowedKeys.includes(keyCode)) {
+                return;  // Phím hợp lệ, cho phép nhập
+            } else {
+                event.preventDefault();  // Ngăn chặn nhập các phím không hợp lệ
+            }
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,221 @@
+body {
+    margin: 0px;
+}
+
+.box {
+    width: 1100px;
+    padding: 10px 20px 0px 20px;
+    height: max-content;
+    margin: auto;
+}
+
+.head1 {
+    position: static;
+    overflow: hidden;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.logo {
+    height: 60px;
+}
+
+.search {
+    border: 1px solid rgb(204, 204, 204);
+    border-radius: 7px;
+    align-items: center;
+    display: flex;
+    height: 40px;
+    padding: 10px;
+    width: 50%;
+    margin: 10px 0px 12px 70px;
+    justify-content: space-between;
+}
+
+.icon {
+    cursor: pointer;
+    padding: 10px;
+}
+
+.icon :hover {
+    color: rgb(0, 112, 112);
+}
+
+.right .icon {
+    font-size: 25px;
+}
+
+.text input {
+    border: none;
+    outline: none;
+    font-size: 12px;
+    width: 470px;
+}
+
+.nav {
+    position: sticky;
+    overflow: hidden;
+    cursor: pointer;
+    height: 44px;
+    background-color: rgb(0, 156, 184);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+}
+
+.left {
+    align-items: center;
+    margin: 0;
+    display: flex;
+    margin-left: -40px;
+}
+
+.left ul {
+    list-style-type: none;
+    display: flex;
+    margin-left: -40px;
+}
+
+#nav {
+    align-items: center;
+    padding: 9px;
+    background-color: rgba(0, 112, 112, 0.212);
+    border: 1px solid rgba(255, 255, 255, 0.315);
+}
+
+.title li {
+    text-align: center;
+    padding: 10px 16px;
+    margin: 0;
+}
+
+.title :hover {
+    background-color: rgba(0, 108, 141, 0.479);
+}
+
+.tag li {
+    font-size: smaller;
+    border: 1px solid rgba(255, 255, 255, 0.486);
+    border-radius: 30px;
+    padding: 3px 15px;
+    margin-left: 10px;
+}
+
+.tag :hover {
+    background-color: rgba(219, 255, 255, 0.116);
+}
+
+span img {
+    height: 15px;
+}
+
+span {
+    color: rgb(165, 165, 165);
+    font-size: 11px;
+    margin-right: 11px;
+}
+
+.content {
+    height: fit-content;
+    cursor: pointer;
+    display: flex;
+    margin-top: 20px;
+}
+
+.cleft {
+    margin: 10px 20px 0px 0px;
+}
+
+.main {
+    width: 650px;
+}
+
+.main div {
+    width: 650px;
+    height: 350px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.main div img {
+    align-items: center;
+    width: 650px;
+    transition: 0.5s;
+}
+
+.main div img:hover {
+    scale: 1.05;
+}
+
+.clone {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.part {
+    width: 200px;
+    border-radius: 20px;
+}
+
+.part div {
+    width: 200px;
+    height: 120px;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.iclone {
+    width: 200px;
+    border-radius: 5px;
+    transition: 0.5s;
+}
+
+.part div :hover {
+    scale: 1.05;
+}
+
+.phr {
+    border-bottom: 1px solid rgba(112, 112, 112, 0.295);
+    display: flex;
+    margin-left: 10px;
+    padding: 15px 0px;
+}
+
+.mini {
+    height: 70px;
+    border-radius: 3px;
+    margin: 0px 10px;
+}
+
+p {
+    margin: -2px 0px 0px 0px;
+    font-size: 18px;
+    line-height: 1.3;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.main h3 {
+    font-size: 30px;
+    line-height: 1.3;
+    margin-top: 10px;
+}
+
+.cleft :hover h3 {
+    color: rgb(0, 156, 184);
+}
+
+.clone :hover p {
+    color: rgb(0, 156, 184);
+}
+
+.cright :hover p {
+    color: rgb(0, 156, 184);
+}
+
+a {
+    text-decoration: none;
+}

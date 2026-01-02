@@ -1,0 +1,37 @@
+.box {
+    background-color: rgb(248, 45, 113);
+    border-radius: 20px;
+    padding: 4vw;
+}
+
+.header {
+    color: #ffffff;
+    font-size: 4vw;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.flex {
+    width: 29vw;
+}
+
+.img {
+    margin: 2vw 0vw;
+    height: 19vw;
+    overflow: hidden;
+}
+
+img {
+    width: 29vw;
+}
+
+.text {
+    color: #ffffff;
+    font-size: 2vw;
+    line-height: 1.7;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

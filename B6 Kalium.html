@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="fontawesome-free-6.6.0-web/css/all.css">
+    <title>Kalium</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Barlow;
+            cursor: default;
+        }
+
+        .nav {
+            font-weight: bold;
+            top: 15px;
+            position: fixed;
+            display: flex;
+            width: 80vw;
+            margin: 10px 10vw;
+            justify-content: space-between;
+            font-size: 18px;
+            color: rgb(243, 243, 243);
+            z-index: 10;
+            transition: 0.2s;
+        }
+
+        .left img {
+            height: 30px;
+        }
+
+        .right {
+            display: flex;
+            cursor: pointer;
+        }
+
+        .ulc,
+        .ulcc {
+            padding: 5px 0px;
+            margin: 0px 13px;
+            position: relative;
+        }
+
+        #home::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0%;
+            width: 100%;
+            height: 1px;
+            background-color: rgb(255, 255, 255);
+            transition: 0.4s;
+            border-radius: 1px;
+        }
+
+        .ulc::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0%;
+            height: 1px;
+            background-color: rgb(255, 255, 255);
+            transition: 0.4s;
+            border-radius: 1px;
+        }
+
+        .ulc:hover:after {
+            left: 0%;
+            width: 100%;
+        }
+
+        .ul1 {
+            position: relative;
+        }
+
+        .list {
+            margin: 10px 0px 0px 14px;
+            height: 0;
+            overflow: hidden;
+            position: absolute;
+            width: 180px;
+            border: 1px solid rgba(0, 0, 0, 0);
+        }
+
+        .item {
+            opacity: 0;
+            color: rgb(77, 77, 77);
+            transition: 1s ease;
+            padding: 10px 15px 10px 20px;
+            background-color: white;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .ul1:hover .list {
+            height: max-content;
+            transition-delay: 0.5s;
+            overflow: visible;
+            transition-delay: border 0.5s;
+            border: 1px solid black;
+        }
+
+        .ul1:hover .item {
+            opacity: 1;
+        }
+
+        .ul1:hover .ul2 div {
+            opacity: 0;
+        }
+
+        .ul2 {
+            top: 40px;
+            left: 180px;
+            width: 0px;
+            overflow: hidden;
+            position: absolute;
+            transition-delay: border 0.4s;
+        }
+
+        .ul2 div {
+            background-color: white;
+            width: 140px;
+            padding: 10px 20px;
+            opacity: 0;
+            transition: 1s;
+        }
+
+        .item:hover .ul2 {
+            border: 1px solid black;
+            height: max-content;
+            width: max-content;
+        }
+
+        .item:hover .ul2 div {
+            opacity: 1;
+        }
+
+        .banner {
+            position: relative;
+            height: 40vw;
+            overflow: hidden;
+        }
+
+        .char {
+            position: absolute;
+            left: calc(50vw - 315px);
+            z-index: -100;
+            height: 95vh;
+            transition: 0.3s;
+        }
+
+        .back {
+            margin: auto;
+            position: absolute;
+            z-index: -1000;
+            width: 100vw;
+        }
+
+        .text {
+            left: calc(50vw - 300px);
+            bottom: 15vw;
+            position: absolute;
+            width: 600px;
+            text-align: center;
+            color: white;
+            font-size: 75px;
+            font-family: 'Times New Roman', Times, serif;
+            transition: 0.3s;
+            transition-delay: 0s;
+        }
+
+        .button {
+            position: absolute;
+            font-family: Montserrat;
+            font-weight: bold;
+            width: 120px;
+            font-size: 16px;
+            padding: 10px 14px;
+            border-radius: 3px;
+            background-color: white;
+            text-align: center;
+            left: calc(50vw - 74px);
+            bottom: 10vw;
+            transition: background-color 0.5s;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: rgba(255, 255, 255, 0.753);
+        }
+
+        h2 {
+            font-family: Montserrat;
+            text-align: center;
+            margin: 50px 0px 10px 0px;
+        }
+
+        h3 {
+            text-align: center;
+            margin: 10px 0px 120px 0px;
+            font-weight: 100;
+        }
+
+        .flex {
+            width: 78vw;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(4, 2fr);
+            gap: 3vw;
+        }
+
+        .sp {
+            position: relative;
+            width: 17vw;
+            height: 27vw;
+            cursor: pointer;
+        }
+
+        .cap,
+        .cost {
+            position: absolute;
+            font-weight: bolder;
+            color: rgba(0, 0, 0, 0.719);
+        }
+
+        .sp img {
+            position: absolute;
+            width: 17vw;
+            transition: 0.7s;
+        }
+
+        .show {
+            opacity: 1;
+        }
+
+        .hide {
+            opacity: 0;
+        }
+
+        .cap {
+            width: 13vw;
+            top: 22.5vw;
+            transition: 0.7s;
+        }
+
+        .name {
+            font-size: 20px;
+        }
+
+        .note {
+            position: relative;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .note1 {
+            position: absolute;
+            opacity: 1;
+            transition: 0.5s;
+        }
+
+        .add {
+            position: absolute;
+            opacity: 0;
+            transition: 0.5s;
+        }
+
+        .cost {
+            transition: 0.7s;
+            top: 21.7vw;
+            right: 0.5vw;
+            font-size: 19px;
+        }
+
+        .img:hover .show {
+            opacity: 0;
+        }
+
+        .img:hover .hide {
+            opacity: 1;
+        }
+
+        .note:hover .note1 {
+            opacity: 0;
+        }
+
+        .note:hover .add {
+            opacity: 1;
+        }
+
+        .add::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            width: 0%;
+            height: 1px;
+            background-color: rgb(0, 0, 0);
+            transition: 0.4s;
+            border-radius: 1px;
+        }
+
+        .add:hover:after {
+            left: 0%;
+            width: 100%;
+        }
+
+        @media (max-width: 960px) {
+            .nav {
+                width: 94vw;
+                margin: 5px 3vw;
+                font-size: 12px;
+            }
+
+            .left img {
+                height: 20px;
+            }
+
+            .ulc,
+            .ulcc {
+                padding: 5px 0px;
+                margin: 0px 8px;
+                position: relative;
+            }
+
+            .text {
+                left: calc(100vw - 370px);
+                bottom: 35%;
+                width: 300px;
+                font-size: calc(10px + 5vw);
+                text-align: end;
+            }
+
+            .button {
+                bottom: 15%;
+                width: calc(50px + 4vw);
+                font-size: calc(9px + 0.4vw);
+                padding: 10px 14px;
+                left: calc(48vw - 39px);
+                background-color: rgba(0, 0, 0, 0.308);
+                color: white;
+            }
+
+            .char {
+                position: absolute;
+                left: calc(0px + 5vw);
+                z-index: -100;
+                height: 60vw;
+            }
+
+            h3 {
+                margin: 10px 0px 60px 0px;
+            }
+
+            .flex {
+                grid-template-columns: repeat(2, 2fr);
+                gap: 6vw;
+            }
+
+            .sp {
+                width: 34vw;
+                height: 54vw;
+            }
+
+            .sp img {
+                width: 34vw;
+                transition: 0.7s;
+            }
+
+            .cap {
+                width: 26vw;
+                top: 44vw;
+                transition: 0.7s;
+            }
+
+            .name {
+                font-size: calc(14px + 0.5vw);
+            }
+
+            .note {
+                margin-top: 0.8vw;
+                font-size: calc(10px + 0.5vw);
+            }
+
+            .cost {
+                transition: 0.7s;
+                top: 43vw;
+                right: 0.5vw;
+                font-size: calc(16px + 0.5px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nav">
+        <div class="left"><img src="https://demo.kaliumtheme.com/fashion/wp-content/uploads/2016/10/fashion_logo.png"
+                alt=""></div>
+        <div class="right">
+            <div class="ul1">
+                <div class="ulc" id="home">Home</div>
+                <div class="list">
+                    <div class="item">Home Fullscreen</div>
+                    <div class="item">Home Parallax</div>
+                </div>
+            </div>
+            <div class="ul1">
+                <div class="ulc">Shop</div>
+                <div class="list">
+                    <div class="item">Accessories</div>
+                    <div class="item">
+                        <div class="ulc2">Variants</div>
+                        <div class="ul2">
+                            <div class="item">Sidebar Left</div>
+                            <div class="item">Sidebar Right</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ul1">
+                <div class="ulc">Product</div>
+                <div class="list">
+                    <div class="item">Simple</div>
+                    <div class="item">Variable</div>
+                </div>
+            </div>
+            <div class="ul1">
+                <div class="ulc">News</div>
+                <div class="list">
+                    <div class="item">Sidebar Right</div>
+                    <div class="item">Sidebar Left</div>
+                </div>
+            </div>
+            <div class="ul1">
+                <div class="ulc">Pages</div>
+                <div class="list">
+                    <div class="item">About</div>
+                    <div class="item">Contact</div>
+                </div>
+            </div>
+            <div class="ulc">Buy Now</div>
+            <div class="ulcc"><i class="fa fa-search"></i></div>
+            <div class="ulcc"><i class="fa fa-shopping-bag"></i></div>
+        </div>
+    </div>
+    <div class="banner">
+        <img src="Kalium-char.png" alt="" class="char">
+        <img src="Kalium-back.jpg" alt="" class="back">
+        <div class="text">Monochrome Collection</div>
+        <div class="button">SHOP NOW</div>
+    </div>
+    <div class="title">
+        <h2>New Arrivals</h2>
+        <h3>Latest From our Store</h3>
+    </div>
+    <div class="flex">
+        <div class="sp">
+            <div class="img">
+                <img src="Kalium-show1.png" alt="" class="show">
+                <img src="Kalium-hide1.jpg" alt="" class="hide">
+            </div>
+            <div class="cost">&#36;9</div>
+            <div class="cap">
+                <div class="name">Broken T Shirt</div>
+                <div class="note">
+                    <div class=note1>Men, T Shirts</div>
+                    <div class="add">Add to cart</div>
+                </div>
+            </div>
+        </div>
+        <div class="sp">
+            <div class="img">
+                <img src="Kalium-show2.png" alt="" class="show">
+                <img src="Kalium-hide2.jpg" alt="" class="hide">
+            </div>
+            <div class="cost">&#36;25</div>
+            <div class="cap">
+                <div class="name">Knickerboxer</div>
+                <div class="note">
+                    <div class=note1>Men, Sweaters</div>
+                    <div class="add">Add to cart</div>
+                </div>
+            </div>
+        </div>
+        <div class="sp">
+            <div class="img">
+                <img src="Kalium-show3.png" alt="" class="show">
+                <img src="Kalium-hide3.jpg" alt="" class="hide">
+            </div>
+            <div class="cost">&#36;7</div>
+            <div class="cap">
+                <div class="name">Studio Belt</div>
+                <div class="note">
+                    <div class=note1>Accessories</div>
+                    <div class="add">Add to cart</div>
+                </div>
+            </div>
+        </div>
+        <div class="sp">
+            <div class="img">
+                <img src="Kalium-show4.png" alt="" class="show">
+                <img src="Kalium-hide4.jpg" alt="" class="hide">
+            </div>
+            <div class="cost">&#36;29</div>
+            <div class="cap">
+                <div class="name">Chambray Shirt</div>
+                <div class="note">
+                    <div class=note1>Men, Sweaters</div>
+                    <div class="add">Add to cart</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <br><br>
+    <script>// chặn Devtool
+        setInterval(function () {
+            if (window.outerHeight - window.innerHeight > 100 || window.outerWidth - window.innerWidth > 100) {
+                alert("Đang định làm gì với đống code của tui zạ??");
+                window.location.reload();
+            }
+        }, 1000);
+
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'F12' ||
+                ((event.ctrlKey || event.metaKey) && event.shiftKey && event.key === 'I') ||
+                ((event.ctrlKey || event.metaKey) && event.shiftKey && event.key === 'J') ||
+                ((event.ctrlKey || event.metaKey) && event.shiftKey && event.key === 'C') ||
+                ((event.ctrlKey || event.metaKey) && event.key === 'U')) {
+                event.preventDefault();
+                alert("Wellcome to Devtool Lmao");
+            }
+        });
+
+        document.addEventListener('copy', function (event) {
+            event.preventDefault();
+            alert("Coppy Failed Successful !!!");
+        });
+
+        document.addEventListener('contextmenu', function (event) {
+            event.preventDefault();
+            alert("Rai cờ líc đít sa bờ lẹt");
+        });
+    </script>
+</body>
+
+</html>

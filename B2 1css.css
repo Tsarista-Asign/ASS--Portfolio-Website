@@ -1,0 +1,21 @@
+*{
+    background-color:#009294;
+}
+p{
+    color:#FFFFFF;
+}
+h1{
+    background-color:yellow;
+    text-align:center;
+}
+h3{
+    font-size:16pt;
+    color:#FF0000;
+}
+ol{
+   border:dashed 4px blue; 
+}
+.a{
+    text-decoration: none;
+    color:black;
+}

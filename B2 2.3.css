@@ -1,0 +1,90 @@
+       * {
+           background-color: white;
+       }
+
+       div {
+           margin-left: 10%;
+           margin-right: 10%;
+       }
+
+       h1 {
+           font-size: 2.6em;
+           line-height: 1.21;
+           font-family: "Segoe UI Light", "wf_segoe-ui_light", Arial, "Helvetica Neue", Verdana, Helvetica, Sans-Serif;
+           font-weight: 300;
+       }
+
+       .Windows-header {
+           font-family: "Segoe UI", "Segoe UI Web", "wf_segoe-ui_normal", "Helvetica Neue", "BBAlpha Sans", "S60 Sans", Arial, sans-serif;
+           font-style: italic;
+           font-size: 1.3em;
+           color: #767676;
+       }
+
+       p {
+           font-family: "Segoe UI", "Segoe UI Web", "wf_segoe-ui_normal", "Helvetica Neue", "BBAlpha Sans", "S60 Sans", Arial, sans-serif;
+           font-size: 1.4em;
+       }
+
+       a {
+           color: #006cb4;
+           text-decoration: none;
+           font-family: "Segoe UI", "Segoe UI Web", "wf_segoe-ui_normal", "Helvetica Neue", "BBAlpha Sans", "S60 Sans", Arial, sans-serif;
+       }
+
+       .aside {
+           background: #f3f3f3;
+           margin-top: 16px;
+           margin-bottom: 16px;
+           padding-left: 3.5%;
+           padding-top: 6px;
+           padding-right: 8%;
+           padding-bottom: 6px;
+           font-size: 100%;
+       }
+
+       a .a {
+           display: inline-block;
+           font-size: 16px;
+           font-weight: 700;
+           line-height: 22px;
+           padding-bottom: 4px;
+           margin-right: 46px;
+       }
+
+       h2 {
+           margin-top: 40px;
+           font-family: "Segoe UI Light", "wf_segoe-ui_light", Arial, "Helvetica Neue", Verdana, Helvetica, Sans-Serif;
+           font-weight: 300;
+           font-size: 2.1em;
+           line-height: 1.25;
+       }
+
+       .a-blank {
+           color: white;
+           background-color: #0067b8;
+           border: 2px solid transparent;
+           padding: 9px 12px 10px;
+           margin-top: 4px;
+           text-align: center;
+           display: inline-block;
+           font-family: "Segoe UI", "Segoe UI Web", "wf_segoe-ui_normal", "Helvetica Neue", "BBAlpha Sans", "S60 Sans", Arial, sans-serif;
+       }
+
+       ul {
+           font-family: "Segoe UI", "Segoe UI Web", "wf_segoe-ui_normal", "Helvetica Neue", "BBAlpha Sans", "S60 Sans", Arial, sans-serif;
+       }
+
+       li {
+           list-style-type: square;
+           margin: 20px auto;
+       }
+
+       img {
+           max-width: 800px;
+       }
+
+       body {
+           width: 1000px;
+           margin: auto;
+       }

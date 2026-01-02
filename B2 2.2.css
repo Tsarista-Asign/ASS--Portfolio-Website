@@ -1,0 +1,105 @@
+ body {
+     background-color: rgb(218, 218, 218);
+     font-family: Be Vietnam Pro;
+ }
+
+ .bar {
+     background-color: white;
+     width: 1080px;
+     border-width: px;
+     border-color: black;
+     margin: auto;
+     margin-top: 6%;
+     padding-left: 35px;
+     padding-right: 35px;
+ }
+
+ .box {
+     background-color: white;
+     width: 700px;
+     border-width: 10px;
+     border-color: black;
+     margin: auto;
+     padding-left: 50px;
+     padding-right: 400px;
+     padding-top: 10px;
+ }
+
+ h1 {
+     font-size: 25px;
+     font-weight: bolder;
+ }
+
+ h2 {
+     font-size: 17px;
+ }
+
+ a {
+     color: black;
+     text-decoration: none;
+     font-size: smaller;
+ }
+
+ span {
+     font-weight: bolder;
+     font-size: small;
+ }
+
+ figcaption {
+     font-size: 13px;
+     background-color: rgb(230, 230, 230);
+     line-height: 1.5;
+ }
+
+ img {
+     width: 620px;
+ }
+
+ .ul {
+     list-style-type: none;
+     margin: 0;
+     padding: 0;
+     overflow: hidden;
+     top: 0;
+     width: 100%;
+
+ }
+
+ .li1 {
+     float: left;
+     display: block;
+     color: rgb(0, 0, 0);
+     text-align: center;
+     padding: 14px 16px;
+     text-decoration: none;
+     font-size: smaller;
+     font-weight: bold;
+ }
+
+ .li2 {
+     float: right;
+     display: block;
+     color: rgb(0, 0, 0);
+     text-align: center;
+     padding: 14px 16px;
+     text-decoration: none;
+     font-size: smaller;
+     font-weight: bold;
+ }
+
+ .li1:hover {
+     color: white;
+     background-color: #646464;
+     font-weight: bold;
+ }
+
+ .li2:hover {
+     color: white;
+     background-color: #646464;
+     font-weight: bold;
+ }
+
+ .active {
+     background-color: #58257b;
+     color: white;
+ }

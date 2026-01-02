@@ -1,0 +1,87 @@
+/* styles.css */
+body {
+    width: 95%;
+    max-width: 1000px;
+    margin: auto;
+    background-color: rgb(231, 231, 231);
+    scroll-behavior: smooth;
+    caret-color: transparent;
+}
+
+header {
+    font-family: Arial, Helvetica, sans-serif;
+    max-width: 650px;
+}
+
+.container {
+    max-width: 650px;
+}
+
+article img {
+    display: block;
+    width: 95%;
+    max-width: 700px;
+    height: auto;
+}
+
+header span {
+    font-weight: bold;
+    font-size: small;
+}
+
+#head1 {
+    color: rgb(150, 150, 150);
+}
+
+#head2 {
+    color: rgb(94, 94, 94);
+}
+
+#head3 {
+    color: rgb(255, 51, 0);
+}
+
+#head4 {
+    color: rgb(95, 95, 95);
+}
+
+a {
+    color: rgb(78, 78, 78);
+    font-size: smaller;
+    text-decoration: none;
+}
+
+.link {
+    line-height: 30px;
+}
+
+.other {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+div a {
+    max-width: 160px
+}
+
+.end {
+    text-align: right;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    margin-bottom: 100px;
+    background-color: rgb(231, 231, 231);
+    width: max-content;
+    padding: 7px;
+    border-radius: 20px;
+    float: right;
+}
+
+#region {
+    padding: 30px;
+    margin-top: 50px;
+    width: 95%;
+    max-width: 900px;
+    background-color: white;
+    border: 1px solid rgb(168, 168, 168);
+}

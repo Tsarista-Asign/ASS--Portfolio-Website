@@ -1,0 +1,433 @@
+#navigationbar a {
+    display: block;
+}
+
+#shadow {
+    position: fixed;
+    width: 100vw;
+    height: 5vw;
+    top: 0;
+    background-color: rgba(27, 27, 27, 0.466);
+    backdrop-filter: blur(20px);
+    opacity: 2;
+    transition: opacity 0.5s ease;
+    mix-blend-mode: overlay;
+    z-index: 90;
+}
+
+.navbar {
+    display: flex;
+    position: fixed;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    font-weight: bolder;
+    font-size: calc(1.3vw + 5px);
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    padding: 0;
+    transition: background-color 0.4s, backdrop-filter 0.4s;
+    z-index: 100;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+}
+
+.navtitle:hover {
+    text-shadow: 0 0 0.3vw rgba(212, 139, 255, 0.808),
+        0 0 0.3vw rgba(189, 22, 255, 0.5),
+        0 0 0.3vw rgba(242, 100, 255, 0.349);
+}
+
+.navtitle.navcurrent::after {
+    position: absolute;
+    background-color: rgba(250, 216, 255, 0.829);
+    content: '';
+    height: calc(0.3vw + 1px);
+    border-radius: 100vw;
+    bottom: 10%;
+    left: 1.8vw;
+    width: calc(100% - 3.6vw);
+    box-shadow: 0 0 0.8vw rgba(183, 0, 255, 0.801);
+    transition: 0.5s ease;
+    transition-delay: 0.2s;
+}
+
+.navleft {
+    cursor: pointer;
+    padding: 0vw 1vw;
+}
+
+.navright {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    padding: 0 1.5vw 0 0;
+    transition: scale 0.3s;
+}
+
+.navtitle {
+    position: relative;
+    padding: 1.4vw 1.6vw 1.6vw;
+    line-height: 1;
+    transition: text-shadow 0.4s ease;
+}
+
+.navtitle::after {
+    position: absolute;
+    background-color: rgba(176, 58, 255, 0.829);
+    content: '';
+    height: calc(0.3vw + 1px);
+    border-radius: 100vw;
+    bottom: 10%;
+    left: 50%;
+    width: 0%;
+    transition: left 0.5s ease, width 0.5s ease, box-shadow 0.5s ease;
+    transition-delay: 0.2s;
+    z-index: 1000;
+}
+
+.navtitle:hover::after {
+    left: 1.5vw;
+    width: calc(100% - 3vw);
+    box-shadow: 0 0 0.8vw rgba(195, 0, 255, 0.801);
+}
+
+/* 
+.navdroplist {
+    height: 0;
+    overflow-y: hidden;
+    position: absolute;
+    font-size: calc(1.2vw + 4px);
+    top: calc(4.1vw + 5px);
+    left: 0px;
+    width: 170%;
+    max-width: 15vw;
+    padding: 0;
+    background-color: #080808c5;
+    border-radius: 1.5vw;
+    transition: 0.3s ease;
+}
+
+.navdroplist a {
+    padding: 1.5vw 2vw;
+    transition: 0.3s;
+}
+
+.navdroplist a:hover {
+    background-color: #5e5e5ec5;
+}
+
+#navbarPages:hover .navdroplist {
+    height: calc((4.2vw + 5px) * 4);
+}
+
+#navbarTrans:hover .navdroplist {
+    height: calc((4.2vw + 5px) * 3);
+}
+
+.navuser {
+    padding: 0px 0px 0px 2vw;
+}
+
+.navuser i {
+    font-size: calc(1.2vw + 4px);
+    width: calc(1.2vw + 4px);
+    height: calc(1.2vw + 4px);
+    padding: 0.9vw;
+    border: 0.25vw solid rgb(125, 0, 209);
+    border-radius: 50%;
+    text-align: center;
+    transition: 0.5s;
+    transition-delay: 0.1s;
+}
+
+.navuser:hover i {
+    box-shadow: 0 0 1vw rgba(132, 0, 255, 0.801);
+    text-shadow: 0 0 1vw rgba(212, 139, 255, 0.808),
+        0 0 1vw rgba(189, 22, 255, 0.5),
+        0 0 1vw rgba(242, 100, 255, 0.349);
+}
+ */
+
+/* Navigation Button */
+
+
+.navbutton {
+    position: fixed;
+    background-blend-mode: overlay;
+    backdrop-filter: blur(3px);
+    color: white;
+    width: max-content;
+    padding: 0px;
+    top: 0.5vw;
+    right: 0.5vw;
+    background-color: #00000066;
+    border-radius: 100vw;
+    scale: 0;
+    opacity: 0;
+    transition: height 0.5s ease, opacity 0.5s ease, scale 0.5s ease, border-radius 0.5s ease;
+    z-index: 1000;
+}
+
+
+.navbutton div {
+    cursor: pointer;
+    transition: height 0.5s ease, opacity 0.5s ease;
+}
+
+.navicon {
+    text-align: center;
+    padding: 1vw;
+    font-size: 4vw;
+    border-radius: 50%;
+    scale: 0.9;
+    transition: scale 0.5s ease, text-shadow 0.5s ease;
+}
+
+.navicon i {
+    text-align: center;
+    width: 4vw;
+    padding: 1vw;
+}
+
+.navitem i {
+    font-size: 3vw;
+    margin: 0.7vw 0px;
+    transition: 0.5s ease;
+}
+
+.navitcap {
+    font-size: 1.5vw;
+    font-weight: 400;
+    margin-top: 0.6vw;
+}
+
+.navitem {
+    width: 7vw;
+    height: 7vw;
+    padding: 0.5vw;
+    text-align: center;
+    transition-delay: 0.4s;
+    transition: height 0.7s ease;
+    margin-bottom: 0.9vw;
+}
+
+.navradius .navitem {
+    opacity: 0;
+}
+
+.navbutton .navuser {
+    padding: 1vw;
+    width: 6vw;
+    height: 6vw;
+    text-align: center;
+    transition-delay: 0s;
+    transition: 0.6s ease;
+    opacity: 0;
+}
+
+.navbutton .navuser i {
+    font-size: 2vw;
+    width: 2vw;
+    height: 2vw;
+    padding: 1.5vw;
+    border: 0.5vw solid rgb(174, 0, 255);
+    border-radius: 50%;
+    text-align: center;
+    transition: 0.5s ease;
+    transition-delay: 0.1s;
+}
+
+.navradius .navitem {
+    opacity: 0;
+}
+
+.navradius.show {
+    height: 53vw;
+    border-radius: 2vw;
+}
+
+.navradius.hide {
+    height: 8vw;
+}
+
+.navradius.over {
+    overflow-y: hidden;
+}
+
+.navitem.show {
+    opacity: 1;
+}
+
+.navitem.hide {
+    opacity: 0;
+}
+
+/* 
+.navuser.show {
+    opacity: 1;
+}
+
+.navuser.hide {
+    opacity: 0;
+} */
+
+.navicon.show,
+.navicon.hide {
+    transition: scale 0.5s ease, text-shadow 0.5s ease;
+}
+
+.navicon,
+.navitem {
+    text-shadow: 0 0 0.4vw rgba(212, 139, 255, 0.808),
+        0 0 0.4vw rgba(189, 22, 255, 0.5),
+        0 0 0.4vw rgba(242, 100, 255, 0.349);
+}
+
+.navicon:hover {
+    text-shadow: 0 0 1vw rgba(212, 139, 255, 0.808),
+        0 0 1vw rgba(189, 22, 255, 0.5),
+        0 0 1vw rgba(242, 100, 255, 0.349);
+}
+
+.navitem:hover {
+    text-shadow: 0 0 1vw rgba(212, 139, 255, 0.808),
+        0 0 1vw rgba(189, 22, 255, 0.5),
+        0 0 1vw rgba(242, 100, 255, 0.349);
+}
+
+/* 
+#Pages,
+#Transpos {
+    position: relative;
+}
+
+.multiconpage,
+.multicontran {
+    position: absolute;
+    height: 1.5vw;
+    width: 8vw;
+    font-size: 1.5vw;
+    padding: 3.25vw 0;
+    font-weight: 400;
+    background-color: rgba(0, 0, 0, 0.452);
+    border-radius: 50%;
+    transition: 0.5s ease;
+}
+
+.multiconpage.hide,
+.multicontran.hide {
+    top: -1vw;
+    left: 0vw;
+    scale: 0;
+    opacity: 0;
+}
+
+.multiconpage.show,
+.multicontran.show {
+    scale: 1;
+    opacity: 1;
+}
+
+.show#lmulticon0 {
+    top: 8vw;
+    left: 8.5vw;
+}
+
+.show#lmulticon1 {
+    top: 6vw;
+    left: 10vw;
+}
+
+.show#lmulticon2 {
+    top: 3.1vw;
+    left: 15vw;
+}
+
+.show#lmulticon3 {
+    top: -1vw;
+    left: 14vw;
+}
+
+.show#lmulticon4 {
+    top: -5.1vw;
+    left: 15vw;
+}
+
+.show#lmulticon5 {
+    top: -8vw;
+    left: 10vw;
+}
+
+.show#lmulticon6 {
+    top: -10vw;
+    left: 8.5vw;
+}
+
+.show#rmulticon0 {
+    top: -10vw;
+    left: -8.5vw;
+}
+
+.show#rmulticon1 {
+    top: -8vw;
+    left: -10vw;
+}
+
+.show#rmulticon2 {
+    top: -5.1vw;
+    left: -15vw;
+}
+
+.show#rmulticon3 {
+    top: -1vw;
+    left: -14vw;
+}
+
+.show#rmulticon4 {
+    top: 3.1vw;
+    left: -15vw;
+}
+
+.show#rmulticon5 {
+    top: 6vw;
+    left: -10vw;
+}
+
+.show#rmulticon6 {
+    top: 8vw;
+    left: -8.5vw;
+} */
+
+@media (max-width: 768px) {
+    #shadow {
+        opacity: 0;
+    }
+
+    .navright {
+        scale: 0;
+    }
+
+    .navradius {
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+/* Responsive Navbutton */
+
+@media (min-width: 769px) {
+    .navbutton {
+        scale: 0;
+        opacity: 0;
+    }
+
+    .navbutton div {
+        scale: 0;
+        opacity: 0;
+    }
+}
